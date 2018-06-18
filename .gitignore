@@ -1,0 +1,89 @@
+.idea
+node_modules
+jspm_packages
+npm-debug.*
+link-checker-results.txt
+app/**/*.js
+*.js.map
+e2e/**/*.js
+e2e/**/*.js.map
+_test-output
+_temp
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+# https://github.com/johnpapa/angular-tour-of-heroes/blob/master/.gitignore
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+bower_components
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# https://raw.githubusercontent.com/angular/angular/master/.gitignore
+.DS_STORE
+
+/dist/
+bazel-*
+e2e_test.*
+node_modules
+bower_components
+tools/gulp-tasks/cldr/cldr-data/
+
+# Include when developing application packages.
+pubspec.lock
+.c9
+.idea/
+.settings/
+*.swo
+modules/.settings
+.bazelrc
+.vscode
+modules/.vscode
+
+# Don't check in secret files
+*secret.js
+
+# Ignore npm/yarn debug log
+npm-debug.log
+yarn-error.log
+
+# build-analytics
+.build-analytics
+
+# rollup-test output
+/modules/rollup-test/dist/
