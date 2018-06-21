@@ -1,27 +1,23 @@
-<!-- Guard against missing customer (defensive programming) -->
 <div *ngIf="customer">
-
-  <!--Diagnostic: {{ customer | json }}-->
-
   <h2>
     <button (click)="left()"><</button>
-    {{customer.name}}
+      {{customer.customerID}}
     <button (click)="right()">></button>
   </h2>
 
   <fieldset>
-    <label>
-      Name:
-      <input [(ngModel)]="customer.name" placeholder="Customer name">
+    <label for="customerID">
+      Customer ID:
+      <input id="customerID" [(ngModel)]="customer.customerID" placeholder="Customer ID">
     </label>
   </fieldset>
 
-  <br>
-  <label><input type="checkbox" [(ngModel)]="showAddress"/>Show address</label>
+  <!-- <br>
+  <label><input type="checkbox" [(ngModel)]="showName"/>Show Name</label> -->
 
-  <div *ngIf="showAddress">
-    <h3>Address:</h3>
-    <my-address [address]="customer.address"></my-address>
+  <div>
+    <h3>Name:</h3>
+    <my-name [name]="customer.birthday"></my-name>
   </div>
 
 </div>

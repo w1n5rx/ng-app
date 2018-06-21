@@ -18,10 +18,10 @@ import 'rxjs/add/observable/throw'; // <-- add rxjs Observable extensions used h
 @Injectable()
 export class DataService {
   private customersUrl = 'api/customers';
-  private statesUrl = 'api/states';
+  // private statesUrl = 'api/states';
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  constructor(
+  constructor (
     private http: Http,  // <-- inject http
     private logger: LoggerService) { }
 
@@ -54,22 +54,22 @@ export class DataService {
   }
 
   /** Get existing states as an Observable */
-  getStates(): Observable<string[]> {
-    this.logger.log('Getting states as an Observable via Http ...');
+  // getStates(): Observable<string[]> {
+  //   this.logger.log('Getting states as an Observable via Http ...');
 
-    return this.http.get(this.statesUrl)
-      .map(response => {
-        return response.json().data as string[];
-      })  // <-- extract data
-      .do(states => this.logger.log(`Got ${states.length} states`))
-      .catch(error => this.handleError(error));
-  }
+  //   return this.http.get(this.statesUrl)
+  //     .map(response => {
+  //       return response.json().data as string[];
+  //     })  // <-- extract data
+  //     .do(states => this.logger.log(`Got ${states.length} states`))
+  //     .catch(error => this.handleError(error));
+  // }
 
   /** Update existing customer */
   update(customer: Customer): Observable<any> {
-    const url = `${this.customersUrl}/${customer.id}`;
+    const url = `${this.customersUrl}/${customer.customerID}`;
     const result = this.http.put(url, customer, { headers: this.headers })
-      .do(response => this.logger.log(`Saved customer ${customer.name}`))
+      .do(response => this.logger.log(`Saved customer ${customer.birthday}`))
       .share(); // execute once no matter how many subscriptions
 
     // Result is "cold" which means the update won't happen until something subscribes

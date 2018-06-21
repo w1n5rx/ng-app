@@ -1,11 +1,12 @@
 // When running in the harness we use this instance of the in memory service
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import { createTestCustomers } from './test-data';
+// import { createTestCustomers } from './test-data';
+import { createTestCustomers } from './customer-sample';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const states = ['California', 'Illinois', 'Jalisco', 'Quebec', 'Florida'];
-    return { customers: createTestCustomers(), states };
+    // const states = ['California', 'Illinois', 'Jalisco', 'Quebec', 'Florida'];
+    return { customers: createTestCustomers() };
   }
 }

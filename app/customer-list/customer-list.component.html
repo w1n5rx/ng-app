@@ -1,4 +1,3 @@
-<h1>Customers</h1>
 <p *ngIf="isBusy"><i>Loading customers ...</i></p>
 <p *ngIf="!isBusy">
   <i>Click to select a customer</i> &nbsp;
@@ -10,7 +9,7 @@
   <li *ngFor="let cust of customers"
       (click)="customer = cust"
       [ngClass]="{selected: cust === customer}">
-    {{cust.name}}
+    {{cust.customerID}}
   </li>
 </ul>
 

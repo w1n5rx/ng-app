@@ -1,10 +1,11 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import { createTestCustomers } from '../test-data';
+import { createTestCustomers } from '../customer-sample';
+// import { createTestCustomers } from '../test-data';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const states = ['California', 'Illinois', 'Jalisco', 'Quebec', 'Florida'];
-    return { customers: createTestCustomers(), states };
+    // const states = ['California', 'Illinois', 'Jalisco', 'Quebec', 'Florida'];
+    return { customers: createTestCustomers() };
   }
 }

@@ -1,5 +1,4 @@
-<div *ngIf="address">
-  <!-- Diagnostic {{ address | json }}-->
+<!-- <div *ngIf="address">
   <fieldset>
     <label>
       Street:
@@ -16,7 +15,6 @@
     <label>
       State:
       <select [(ngModel)]="address.state">
-        <!-- See https://github.com/angular/angular/issues/13578 -->
         <option *ngFor="let state of states" [value]="state">{{state}}</option>
       </select>
     </label>
@@ -28,5 +26,18 @@
         <option *ngFor="let region of regions" [value]="region">{{region}}</option>
       </select>
     </label>
+  </fieldset>
+</div> -->
+<div *ngIf="name">
+  <fieldset>
+      <!-- <legend>Customer Name</legend> -->
+      <label for="firstname">
+        First:
+        <input [(ngModel)]="name.first" placeholder="first name" id="firstname">
+      </label>
+      <label for="lastname">
+        Last:
+        <input [(ngModel)]="name.last" placeholder="last name" id="lastname">
+      </label>
   </fieldset>
 </div>
