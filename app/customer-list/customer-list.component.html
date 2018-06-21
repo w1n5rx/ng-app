@@ -1,8 +1,20 @@
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+<!--  Fonts and icons     -->
+<!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
 <p *ngIf="isBusy"><i>Loading customers ...</i></p>
 <p *ngIf="!isBusy">
   <i>Click to select a customer</i> &nbsp;
-  <button (click)="getCustomers()">Refresh</button> &nbsp;
-  <button (click)="save(customer)" [hidden]="!customer">Save</button> &nbsp;
+  <!-- <button (click)="getCustomers()">Refresh</button> &nbsp; -->
+  <a (click)="getCustomers()">
+    <i class="material-icons">refresh</i>
+  </a>
+  <a (click)="save(customer)">
+    <i class="material-icons">save</i>
+  </a>
+
+  <!-- <button (click)="save(customer)" [hidden]="!customer">Save</button> &nbsp; -->
 </p>
 
 <ul>

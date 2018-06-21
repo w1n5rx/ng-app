@@ -1,14 +1,28 @@
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+<!--  Fonts and icons     -->
+<!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
 <div *ngIf="customer">
   <h2>
-    <button (click)="left()"><</button>
+    <a (click)="left()">
+      <i class="material-icons">
+        arrow_left
+      </i>
+    </a>
     {{customer.name.first}} {{customer.name.last}}
-    <button (click)="right()">></button>
+    <a (click)="right()">
+      <i class="material-icons">
+        arrow_right
+      </i>
+    </a>
+    <!-- <button (click)="right()">></button> -->
   </h2>
 
   <fieldset>
     <label for="customerID">
       Customer ID:
-      <input id="customerID" [(ngModel)]="customer.customerID" placeholder="Customer ID">
+      <input id="customerID" [(ngModel)]="customer.customerID" placeholder="Customer ID" class="form-control" disabled>
     </label>
   </fieldset>
   <fieldset>

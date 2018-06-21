@@ -25,7 +25,13 @@
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+
+      // material UI libraries
+      '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
+      // CDK individual packages
+      '@angular/cdk/platform': 'npm:@angular/cdk/bundles/cdk-platform.umd.js',
+      '@angular/cdk/a11y': 'npm:@angular/cdk/bundles/cdk-a11y.umd.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
