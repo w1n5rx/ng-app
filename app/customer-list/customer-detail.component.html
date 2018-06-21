@@ -50,12 +50,10 @@
     </label>
   </fieldset>
 
-  <!-- <br>
-  <label><input type="checkbox" [(ngModel)]="showName"/>Show Name</label> -->
+  <br>
+  <label><input type="checkbox" [(ngModel)]="showName"/>Show Name</label>
 
-  <!-- <div>
-    <h3>Name:</h3>
-    <my-name [name]="customer.birthday"></my-name>
-  </div> -->
-
+  <div *ngIf="showName">
+    <my-name [name]="customer.name"></my-name>
+  </div>
 </div>
