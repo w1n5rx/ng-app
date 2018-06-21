@@ -1,7 +1,7 @@
 <div *ngIf="customer">
   <h2>
     <button (click)="left()"><</button>
-      {{customer.customerID}}
+    {{customer.name.first}} {{customer.name.last}}
     <button (click)="right()">></button>
   </h2>
 
@@ -11,13 +11,37 @@
       <input id="customerID" [(ngModel)]="customer.customerID" placeholder="Customer ID">
     </label>
   </fieldset>
+  <fieldset>
+    <label for="Birthday">
+      Birthday:
+      <input id="Birthday" [(ngModel)]="customer.birthday" placeholder="Birthday">
+    </label>
+  </fieldset>
+  <fieldset>
+    <label for="Gender">
+      Gender:
+      <input id="Gender" [(ngModel)]="customer.gender" placeholder="Gender">
+    </label>
+  </fieldset>
+  <fieldset>
+    <label for="lastContact">
+      Last Contact:
+      <input id="lastContact" [(ngModel)]="customer.lastContact" placeholder="Last Contact">
+    </label>
+  </fieldset>
+  <fieldset>
+    <label for="customerLifetimeValue">
+      Customer Lifetime Value:
+      <input id="customerLifetimeValue" [(ngModel)]="customer.customerLifetimeValue" placeholder="Customer Lifetime Value">
+    </label>
+  </fieldset>
 
   <!-- <br>
   <label><input type="checkbox" [(ngModel)]="showName"/>Show Name</label> -->
 
-  <div>
+  <!-- <div>
     <h3>Name:</h3>
     <my-name [name]="customer.birthday"></my-name>
-  </div>
+  </div> -->
 
 </div>

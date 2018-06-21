@@ -9,7 +9,7 @@
   <li *ngFor="let cust of customers"
       (click)="customer = cust"
       [ngClass]="{selected: cust === customer}">
-    {{cust.customerID}}
+    {{cust.name.last}}, {{cust.name.first}}
   </li>
 </ul>
 
