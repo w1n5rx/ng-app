@@ -22,12 +22,6 @@ export class SectionViewDirective {
 @Component({
   selector: 'ng-app',
   template: `
-    <label>
-      <select [value]="currentSectionIx" (change)="onSectionChange($event.target.selectedIndex)">
-        <option *ngFor="let section of sections; let i = index" [value]="i">{{section.title}}</option>
-      </select>
-    </label>
-    <hr>
     <div sectionView></div>`
 })
 export class AppComponent {
