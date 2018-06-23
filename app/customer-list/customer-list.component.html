@@ -10,7 +10,7 @@
   <a (click)="getCustomers()">
     <i class="material-icons">refresh</i>
   </a>
-  <a (click)="save(customer)">
+  <a (click)="save(customer)" [hidden]="!customer">
     <i class="material-icons">save</i>
   </a>
 

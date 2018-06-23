@@ -1,7 +1,7 @@
 export function createTestCustomers() {
   return [
     {
-        "customerID": 1,
+        "id": 1,
         "name": {
             "first": "Peter",
             "last": "Smith"
@@ -12,7 +12,7 @@ export function createTestCustomers() {
         "customerLifetimeValue": 191.12
     },
     {
-        "customerID": 2,
+        "id": 2,
         "name": {
             "first": "Anna",
             "last": "Hopp"
@@ -23,7 +23,7 @@ export function createTestCustomers() {
         "customerLifetimeValue": 50.99
     },
     {
-        "customerID": 3,
+        "id": 3,
         "name": {
             "first": "Christian",
             "last": "Cox"
@@ -34,7 +34,7 @@ export function createTestCustomers() {
         "customerLifetimeValue": 0
     },
     {
-        "customerID": 4,
+        "id": 4,
         "name": {
             "first": "Roxy",
             "last": "Fox"
@@ -45,7 +45,7 @@ export function createTestCustomers() {
         "customerLifetimeValue": 213.12
     },
     {
-        "customerID": 5,
+        "id": 5,
         "name": {
             "first": "Eric",
             "last": "Adam"

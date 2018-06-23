@@ -12,7 +12,7 @@
 // }
 
 export class Customer {
-  customerID: number;
+  id: number;
   birthday: string;
   gender: string = 'm' || 'w';
   lastContact: Date;

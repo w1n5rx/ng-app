@@ -30,28 +30,28 @@ export class CustomerListComponent implements OnInit {
     this.isBusy = true;
     this.logger.log('Getting customers ...');
 
-    // this.dataService.getCustomersP().then(  // Promise version
-    this.dataService.getCustomers().subscribe( // Observable version
-        custs => {
-          this.isBusy = false;
-          this.customers = custs;
-        },
-        (errorMsg: string) => {
-          this.isBusy = false;
-          alert(errorMsg); // Don't use alert!
-        }
-      );
+    this.dataService.getCustomersP().then(  // Promise version
+    // this.dataService.getCustomers().subscribe( // Observable version
+      custs => {
+        this.isBusy = false;
+        this.customers = custs;
+      },
+      (errorMsg: string) => {
+        this.isBusy = false;
+        alert(errorMsg); // Don't use alert!
+      }
+    );
   }
 
   save(customer: Customer) {
     if (!customer) { return; }
     this.isBusy = true;
-    this.logger.log(`Saving ${customer.name} ...`);
+    this.logger.log(`Saving ${customer.id} ...`);
     this.dataService.update(customer).subscribe(
       () => this.isBusy = false,
       () => {
         this.isBusy = false;
-        alert('Save failed; please check the console'); // Don't use alert!
+        // alert('Save failed; please check the console'); // Don't use alert!
       }
     );
   }

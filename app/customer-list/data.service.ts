@@ -67,7 +67,7 @@ export class DataService {
 
   /** Update existing customer */
   update(customer: Customer): Observable<any> {
-    const url = `${this.customersUrl}/${customer.customerID}`;
+    const url = `${this.customersUrl}/${customer.id}`;
     const result = this.http.put(url, customer, { headers: this.headers })
       .do(response => this.logger.log(`Saved customer ${customer.birthday}`))
       .share(); // execute once no matter how many subscriptions
