@@ -70,6 +70,9 @@ export class CustomerListComponent implements OnInit {
     this.getCustomers();
   }
 
+  add () {
+    // Placeholder
+  }
   shift(increment: number) {
     let ix = increment + this.customers.findIndex(c => c === this.customer);
     ix = Math.min(this.customers.length - 1, Math.max(0, ix));

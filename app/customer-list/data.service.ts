@@ -1,3 +1,4 @@
+import { Customer } from './model';
 // import * as _ from '_';
 // Observable DataService
 import { Injectable }    from '@angular/core';
@@ -82,7 +83,14 @@ export class DataService {
   }
 
   // https://github.com/angular/in-memory-web-api/blob/a94855b7e11ad11f852b0ac7bc0987e25635658e/src/app/http-client-hero.service.ts#L42
-  // add (name: string): Observable<Hero> {
+  add (): Observable<any> {
+  //   const id=9;
+  //   const url = `${this.customersUrl}/${id}`;
+
+  //   return this.http.post(url, { headers: this.headers }).pipe(
+  //     catchError(this.handleError)
+    return;
+  }
 
   /** Common Http Observable error handler */
   private handleError(error: any): Observable<any> {
