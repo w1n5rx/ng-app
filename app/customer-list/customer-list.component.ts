@@ -64,9 +64,10 @@ export class CustomerListComponent implements OnInit {
       () => this.isBusy = false,
       () => {
         this.isBusy = false;
-        alert('Save failed; please check the console'); // Don't use alert!
+        alert('Delete failed; please check the console'); // Don't use alert!
       }
     );
+    this.getCustomers();
   }
 
   shift(increment: number) {

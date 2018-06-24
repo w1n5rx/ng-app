@@ -1,4 +1,4 @@
-import * as _ from '_';
+// import * as _ from '_';
 // Observable DataService
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';  // <-- import Http & Headers
