@@ -1,3 +1,4 @@
+import * as _ from '_';
 // Observable DataService
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';  // <-- import Http & Headers
@@ -18,7 +19,6 @@ import 'rxjs/add/observable/throw'; // <-- add rxjs Observable extensions used h
 @Injectable()
 export class DataService {
   private customersUrl = 'api/customers';
-  // private statesUrl = 'api/states';
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor (
@@ -53,34 +53,36 @@ export class DataService {
       .catch(error => this.handleError(error));
   }
 
-  /** Get existing states as an Observable */
-  // getStates(): Observable<string[]> {
-  //   this.logger.log('Getting states as an Observable via Http ...');
-
-  //   return this.http.get(this.statesUrl)
-  //     .map(response => {
-  //       return response.json().data as string[];
-  //     })  // <-- extract data
-  //     .do(states => this.logger.log(`Got ${states.length} states`))
-  //     .catch(error => this.handleError(error));
-  // }
-
   /** Update existing customer */
   update(customer: Customer): Observable<any> {
     const url = `${this.customersUrl}/${customer.id}`;
     const result = this.http.put(url, customer, { headers: this.headers })
-      .do(response => this.logger.log(`Saved customer ${customer.birthday}`))
-      .share(); // execute once no matter how many subscriptions
+    .do(response => this.logger.log(`Saved customer ${customer.id}`))
+    .share(); // execute once no matter how many subscriptions
 
     // Result is "cold" which means the update won't happen until something subscribes
     // Ensure update happens even if caller doesn't subscribe
     result.subscribe( // triggers the operation, making it "hot"
-      undefined, // only care about failure
-      error => this.handleError(error)
+    undefined, // only care about failure
+    error => this.handleError(error)
     );
 
     return result;
   }
+
+  /** Delete a customer */
+  /** REF: https://github.com/angular/in-memory-web-api/blob/a94855b7e11ad11f852b0ac7bc0987e25635658e/src/app/http-client-hero.service.ts#L50 */
+  delete (customer: Customer | number): Observable<any> {
+    const id = typeof customer === 'number' ? customer : customer.id;
+    const url = `${this.customersUrl}/${id}`;
+
+    return this.http.delete(url, { headers: this.headers })
+      .map(_ => (_ as any as Customer))
+      .catch(error => this.handleError(error));
+  }
+
+  // https://github.com/angular/in-memory-web-api/blob/a94855b7e11ad11f852b0ac7bc0987e25635658e/src/app/http-client-hero.service.ts#L42
+  // add (name: string): Observable<Hero> {
 
   /** Common Http Observable error handler */
   private handleError(error: any): Observable<any> {
